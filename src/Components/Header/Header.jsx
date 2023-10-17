@@ -19,7 +19,7 @@ const Header = () => {
                   <NavLink to="/add-product" className="font-medium hover:text-sky-600 transition">Add Product</NavLink>
                </li>
                <li>
-                  <NavLink to="/my-cart" className="font-medium hover:text-sky-600 transition">My Cart</NavLink>
+                  <NavLink to="/my-cart" className="font-medium hover:text-sky-600 transition">Cart</NavLink>
                </li>
             </ul>
             <div>
