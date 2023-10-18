@@ -3,8 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 const Footer = () => {
    return (
       <div className="py-10 border-t-2 border-gray-200">
-         <div className="max-w-[85%] mx-auto flex justify-between">
-            <Link to="/"><h1 className="font-semibold text-2xl">Brandy</h1></Link>
+         <div className="max-w-[85%] mx-auto grid grid-cols-3 justify-between">
+            <div>
+               <Link to="/"><h1 className="font-semibold text-2xl">Brandy</h1></Link>
+               <p className="mt-2 text-lg font-medium text-gray-600">Discover a range of vehicles to suit your needs, from stylish cars to family-friendly vans.</p>
+            </div>
             <ul className="flex flex-col gap-3">
                <h2 className="text-lg font-semibold">Useful Links</h2>
                <li>
