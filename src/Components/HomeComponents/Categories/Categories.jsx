@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import catCar from '../../../assets/sedan.jpg'
 import CategoryCard from './CategoryCard';
 
 const Categories = () => {
