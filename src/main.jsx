@@ -7,6 +7,8 @@ import Provider from './Provider/Provider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider><RouterProvider router={Router}></RouterProvider></Provider>
+    <Provider>
+      <RouterProvider router={Router}></RouterProvider>
+    </Provider>
   </React.StrictMode>,
 )

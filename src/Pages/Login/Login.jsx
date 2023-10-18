@@ -15,7 +15,7 @@ const Login = () => {
 
       signInUser(email, password)
          .then(() => navigate('/'))
-         .then(error => console.log(error))
+         .then(error => console.log(error.message))
    }
 
    return (

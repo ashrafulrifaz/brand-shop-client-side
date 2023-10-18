@@ -11,6 +11,7 @@ const AddProduct = () => {
       const rating = form.rating.value;
       const details = form.details.value;
       const newProduct = {name, brandName, type, image, price, rating, details}
+      console.log(newProduct);
       
       fetch('http://localhost:5000/products', {
          method: 'POST',
@@ -22,6 +23,7 @@ const AddProduct = () => {
          .then(res => res.json())
          .then(data => {
             console.log(data)
+            form.reset()
          })
    }
 
@@ -40,8 +42,19 @@ const AddProduct = () => {
                   </div>
                   <div className="flex gap-5">
                      <input type="text" name="brand" placeholder="Brand Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
-                     <input type="text" name="type" placeholder="Type" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
-                  </div><div>
+                     {/* <input type="text" name="type" placeholder="Type" className="" required /> */}
+                     <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500">
+                        <select name="type" className="w-full focus:outline-none">
+                           <option value="Type" disabled selected>Type</option>
+                           <option value="Sedan">Sedan</option>
+                           <option value="SUV">SUV</option>
+                           <option value="Sports">Sports</option>
+                           <option value="Convertible">Convertible</option>
+                           <option value="Micro">Micro</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div>
                      <input type="text" name="image" placeholder="Image" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
                   </div>
                   <div className="flex gap-5">
