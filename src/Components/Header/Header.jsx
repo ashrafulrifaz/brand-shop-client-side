@@ -23,7 +23,7 @@ const Header = () => {
                </li>
             </ul>
             <div>
-               <Link to="/login"><button className="py-1.5 px-4 rounded-md bg-sky-500 text-white font-medium hover:scale-105 transition">Login</button></Link>
+               <Link to="/login"><button className="py-1.5 px-4 rounded-full bg-sky-500 text-white font-medium hover:scale-105 transition">Login</button></Link>
             </div>
          </div>
       </div>

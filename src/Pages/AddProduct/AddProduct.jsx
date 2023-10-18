@@ -51,7 +51,7 @@ const AddProduct = () => {
                   <div>
                      <textarea rows="5" type="text" name="details" placeholder="Short Details" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
                   </div>
-                  <button className="text-white font-medium py-2 px-8 rounded-lg bg-rose-500">Publish</button>
+                  <button className="text-white font-medium py-2 px-8 rounded-full hover:scale-105 transition bg-rose-500">Publish</button>
                </div>
             </form>
          </div>
