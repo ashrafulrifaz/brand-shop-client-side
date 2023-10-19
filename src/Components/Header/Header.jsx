@@ -36,7 +36,9 @@ const Header = () => {
             <div>
                {
                   user ? 
-                  <div>
+                  <div className="flex gap-3 items-center">
+                     <span className="font-medium">{user?.displayName}</span>
+                     <img src={user?.photoURL} className="w-8 h-8 rounded-full" alt="user" />
                      <button onClick={handleSignOut} className="py-1.5 px-4 rounded-full bg-sky-500 text-white font-medium hover:scale-105 transition">Log Out</button>
                   </div>
                   :

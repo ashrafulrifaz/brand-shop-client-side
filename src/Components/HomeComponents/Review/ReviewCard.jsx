@@ -1,6 +1,6 @@
 // import AOS from 'aos';
 // import 'aos/dist/aos.css';
-
+import PropTypes from 'prop-types';
 import Rating from "react-rating";
 
 // AOS.init({
@@ -51,5 +51,9 @@ const ReviewCard = ({review}) => {
       </div>      
    );
 };
+
+ReviewCard.propTypes = {
+   review: PropTypes.object
+}
 
 export default ReviewCard;

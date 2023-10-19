@@ -1,3 +1,4 @@
+import AddImage from '../../assets/new-item.jpg'
 
 const AddProduct = () => {
    const handleNewProduct = e => {
@@ -28,21 +29,34 @@ const AddProduct = () => {
    }
 
    return (
-      <div className="max-w-[80%] mx-auto py-12 grid grid-cols-3 items-center gap-5">
-         <div>
-            <div className="flex gap-4">
-               <h1 className="text-4xl font-semibold leading-snug">Let{"'"}s Add a New <span className="text-rose-500">Car or Vehicle</span></h1>
+      <div className="max-w-[85%] mx-auto py-12 flex items-center gap-5">
+         <div className='w-2/5'>
+            <div>
+               {/* <h1 className="text-4xl font-semibold leading-snug">Let{"'"}s Add a New <span className="text-rose-500">Car or Vehicle</span></h1> */}
+               <img src={AddImage} alt="" />
             </div>
          </div>
-         <div className="col-span-2">
+         <div className="w-3/5">
             <form onSubmit={handleNewProduct}>
-               <div className="w-full border border-rose-500 p-10 rounded-lg space-y-5">
+               <div className="w-full border border-rose-500 px-5 py-4 rounded-lg space-y-5">
+                  <h2 className='text-2xl font-semibold'>Add New Car</h2>
                   <div>
                      <input type="text" name="name" placeholder="Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
                   </div>
                   <div className="flex gap-5">
-                     <input type="text" name="brand" placeholder="Brand Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
-                     {/* <input type="text" name="type" placeholder="Type" className="" required /> */}
+                     <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500">
+                        <select name="type" className="w-full focus:outline-none">
+                           <option value="Type" disabled selected>Brand Name</option>
+                           <option value="Honda">Honda</option>
+                           <option value="Toyota">Toyota</option>
+                           <option value="BMW">BMW</option>
+                           <option value="Mercedez Benz">Mercedez Benz</option>
+                           <option value="Audi">Audi</option>
+                           <option value="Tesla">Tesla</option>
+                           <option value="Ford">Ford</option>
+                           <option value="Mazda">Mazda</option>
+                        </select>
+                     </div>
                      <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500">
                         <select name="type" className="w-full focus:outline-none">
                            <option value="Type" disabled selected>Type</option>

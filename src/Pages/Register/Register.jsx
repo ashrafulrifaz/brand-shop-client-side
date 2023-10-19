@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/Provider";
+import { updateProfile } from "firebase/auth";
+import auth from "../../firebase.init";
 
 const Register = () => {
    const [showPass, setShowPass] = useState(false)
@@ -16,7 +18,14 @@ const Register = () => {
       const password = form.password.value
 
       createUser(email, password)
-         .then(() => navigate('/'))
+         .then(() => {
+            updateProfile(auth.currentUser, {
+               displayName: name, photoURL: photo
+            })
+            .then(result => console.log(result))
+            .catch(error => console.log(error.message))
+            navigate('/')
+         })
          .catch(error => console.log(error.message))
    }
 
