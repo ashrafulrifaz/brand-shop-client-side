@@ -7,7 +7,7 @@ const ProductCard = ({product}) => {
    const {_id, name, image, brandName, price, rating} = product
 
    return (
-      <div className="border border-rose-300 rounded-lg p-5 space-y-4">
+      <div className="border border-sky-300 rounded-lg p-5 space-y-4">
          <img src={image} alt="" className="w-auto h-44" />
          <h2 className="text-2xl font-semibold">{name}</h2>
          <div className="flex justify-between items-center">

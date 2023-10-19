@@ -7,7 +7,7 @@ import Review from "../../Components/HomeComponents/Review/Review";
 
 const Home = () => {
    return (
-      <div>
+      <div className="dark:bg-[rgba(0,0,0,0.9)] dark:text-white">
          <Banner></Banner>
          <Categories></Categories>
          <About></About>

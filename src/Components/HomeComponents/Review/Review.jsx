@@ -18,7 +18,7 @@ const Review = () => {
    }, [])
    return (
       <div className="py-12 mx-auto max-w-[85%]">
-         <p className='text-sm font-semibold tracking-widest text-rose-500 uppercase text-center'>Review</p>
+         <p className='text-sm font-semibold tracking-widest text-sky-500 uppercase text-center'>Review</p>
          <h2 className="text-center font-bold text-4xl">Client Review</h2>
          <p className="text-center text-lg mt-3 font-medium">What people think about us</p>
          {/* <div className="mt-8 md:hidden" id="review">
@@ -74,7 +74,7 @@ const Review = () => {
                className="mySwiper mt-4 flex"
             >
                {
-                  reviewData.map((review, idx) => <SwiperSlide className="w-full" key={idx}><ReviewCard review={review}></ReviewCard></SwiperSlide>)
+                  reviewData.map((review, idx) => <SwiperSlide className="w-full dark:bg-[#191919]" key={idx}><ReviewCard review={review}></ReviewCard></SwiperSlide>)
                }
             </Swiper>
          </div>

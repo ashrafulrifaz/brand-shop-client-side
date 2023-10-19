@@ -13,7 +13,7 @@ const Cart = () => {
    return (
       <div className="py-10 mx-auto max-w-[85%]">
          <h1 className="text-2xl font-semibold">My added Cars</h1>
-         <div className="mt-5 border border-rose-300 py-5 rounded-lg">
+         <div className="mt-5 border border-sky-300 py-5 rounded-lg">
             {
                myCartData.length > 0 ?
                <div>

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/Provider";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
    const {user} = useContext(AuthContext)
@@ -20,6 +21,13 @@ const ProductDetails = () => {
       .then(res => res.json())
       .then(data => {
          console.log(data)
+         Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Successfully added to cart',
+            showConfirmButton: false,
+            timer: 1500
+         })
       })
    }
 

@@ -1,11 +1,15 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/Provider";
+import Swal from "sweetalert2";
+import Google from '../../assets/google.png'
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
    const [showPass, setShowPass] = useState(false)
-   const {signInUser} = useContext(AuthContext)
+   const {signInUser, googleLogin} = useContext(AuthContext)
    const navigate = useNavigate()
+   const [erroMessage, setErroMessage] = useState('')
 
    const handleLogin = e => {
       e.preventDefault()
@@ -13,9 +17,35 @@ const Login = () => {
       const email = form.email.value
       const password = form.password.value
 
+      if(email === ""){
+         setErroMessage('Please! Enter your email')
+         return
+      }
+
+      if(password === ""){
+         setErroMessage('Please! Enter your password')
+         return
+      }
+
       signInUser(email, password)
+         .then(() => {
+            Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your Login Successful',
+            showConfirmButton: false,
+            timer: 1500
+            })
+            navigate('/')
+         })
+         .catch(error => setErroMessage(error.message))
+   }
+
+   const handleGoogleLogin = () => {
+      const provider = new GoogleAuthProvider()
+      googleLogin(provider)
          .then(() => navigate('/'))
-         .then(error => console.log(error.message))
+         .then(error => setErroMessage(error.message))
    }
 
    return (
@@ -32,16 +62,16 @@ const Login = () => {
                   <input id="password" type={showPass ? 'text' : 'password'} name="password" placeholder="Enter your password" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
                   <span onClick={() => setShowPass(!showPass)} className="absolute text-xs font-semibold bottom-3 right-3 cursor-pointer">{showPass ? 'Hide' : 'Show'}</span>
                </div>
+               {
+                  erroMessage && <p className="text-red-500 font-medium mt-3">{erroMessage}</p>
+               }
                <button className="w-full bg-sky-500 py-2 rounded-full text-white font-semibold">Login</button>
                <p className='text-center'>Don{"'"}t have an Account <Link to="/register" className='font-medium text-blue-600 hover:underline'>Register</Link></p>
             </form>
             <div className="flex gap-5 mt-4">
-               {/* <a onClick={handleGoogleLogin} className="w-full border border-blue-500 py-2 rounded-lg text-blue-500 font-semibold flex gap-2 justify-center items-center cursor-pointer">
+               <a onClick={handleGoogleLogin} className="w-full border border-blue-500 py-2 rounded-full text-blue-500 font-semibold flex gap-2 justify-center items-center cursor-pointer">
                   <img src={Google} className='w-5 h-5' alt="google" /> <span>Login with Google</span>
                </a>
-               <a className="w-full border border-blue-500 py-2 rounded-lg text-blue-500 font-semibold flex gap-2 justify-center items-center cursor-pointer">
-                  <img src={Facebook} className='w-5 h-5' alt="google" /> <span>Login with Facebook</span>
-               </a> */}
             </div>
          </div>
       </div>

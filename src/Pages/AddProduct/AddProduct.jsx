@@ -37,13 +37,13 @@ const AddProduct = () => {
          </div>
          <div className="w-3/5">
             <form onSubmit={handleNewProduct}>
-               <div className="w-full border border-rose-500 px-5 py-4 rounded-lg space-y-5">
+               <div className="w-full border border-sky-500 px-5 py-4 rounded-lg space-y-5">
                   <h2 className='text-2xl font-semibold'>Add New Car</h2>
                   <div>
-                     <input type="text" name="name" placeholder="Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
+                     <input type="text" name="name" placeholder="Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
                   </div>
                   <div className="flex gap-5">
-                     <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500">
+                     <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500">
                         <select name="brand" className="w-full focus:outline-none">
                            <option value="Type" disabled selected>Brand Name</option>
                            <option value="Honda">Honda</option>
@@ -56,7 +56,7 @@ const AddProduct = () => {
                            <option value="Mazda">Mazda</option>
                         </select>
                      </div>
-                     <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500">
+                     <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500">
                         <select name="type" className="w-full focus:outline-none">
                            <option value="Type" disabled selected>Type</option>
                            <option value="Sedan">Sedan</option>
@@ -68,16 +68,16 @@ const AddProduct = () => {
                      </div>
                   </div>
                   <div>
-                     <input type="text" name="image" placeholder="Image" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
+                     <input type="text" name="image" placeholder="Image" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
                   </div>
                   <div className="flex gap-5">
-                     <input type="number" name="price" placeholder="Price" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
-                     <input type="text" name="rating" placeholder="Rating" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
+                     <input type="number" name="price" placeholder="Price" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
+                     <input type="text" name="rating" placeholder="Rating" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
                   </div>
                   <div>
-                     <textarea rows="5" type="text" name="details" placeholder="Short Details" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
+                     <textarea rows="5" type="text" name="details" placeholder="Short Details" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
                   </div>
-                  <button className="text-white font-medium py-2 px-8 rounded-full hover:scale-105 transition bg-rose-500">Publish</button>
+                  <button className="text-white font-medium py-2 px-8 rounded-full hover:scale-105 transition bg-sky-500">Publish</button>
                </div>
             </form>
          </div>

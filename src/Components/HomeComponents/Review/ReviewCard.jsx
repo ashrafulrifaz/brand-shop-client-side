@@ -13,18 +13,18 @@ const ReviewCard = ({review}) => {
    const {name, image, review_text, profession, rating} = review
 
    return (
-      <div className="p-5 rounded-xl border border-yellow-500 text-left relative hover:-translate-y-3 transition-all">
+      <div className="p-5 rounded-xl dark:bg-[#191919] border border-yellow-500 text-left relative hover:-translate-y-3 transition-all">
          <div className="flex gap-3 items-center">
             <div className="w-2/12">
                <img style={{width: '50px', height: '50px'}} src={image} className="rounded-full" alt="user" />
             </div>
             <div>
                <h5 className="font-medium text-lg">{name}</h5>
-               <p className="text-slate-700 text-base font-medium">{profession}</p>
+               <p className="text-slate-700 dark:text-[rgba(255,255,255,0.9)] text-base font-medium">{profession}</p>
             </div>
          </div>
          <hr className="my-3 w-3/4" />
-         <p className="text-slate-700">{review_text}</p>
+         <p className="text-slate-700 dark:text-[rgba(255,255,255,0.9)]">{review_text}</p>
          <div className="absolute border border-t-0 border-r-0 rounded-bl-lg rounded-tr-xl border-yellow-500 px-2 top-0 right-0">
             <div className="flex items-center gap-2">
                <Rating
