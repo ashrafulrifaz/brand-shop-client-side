@@ -11,3 +11,8 @@ body {
 #category_card:hover #category_button {
   display: block;
 } */
+
+.swiper-wrapper {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}

@@ -3,6 +3,11 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import ReviewCard from './ReviewCard';
 import { useEffect, useState } from 'react';
 
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './styles.css';
+
 const Review = () => {
    const [reviewData, setReviewData] = useState([])
 
@@ -13,7 +18,7 @@ const Review = () => {
    }, [])
    return (
       <div className="py-12 mx-auto max-w-[85%]">
-         <p className='text-sm font-semibold tracking-widest text-rose-500 uppercase'>Services</p>
+         <p className='text-sm font-semibold tracking-widest text-rose-500 uppercase text-center'>Review</p>
          <h2 className="text-center font-bold text-4xl">Client Review</h2>
          <p className="text-center text-lg mt-3 font-medium">What people think about us</p>
          {/* <div className="mt-8 md:hidden" id="review">
@@ -54,7 +59,7 @@ const Review = () => {
                }
             </Swiper>
          </div> */}
-         <div className="mt-8 hidden lg:block" id="review">
+         <div className="hidden lg:block" id="review">
             <Swiper
                slidesPerView={3}
                spaceBetween={30}
@@ -66,7 +71,7 @@ const Review = () => {
                clickable: true,
                }}
                modules={[Pagination, Autoplay]}
-               className="mySwiper mt-10 flex"
+               className="mySwiper mt-4 flex"
             >
                {
                   reviewData.map((review, idx) => <SwiperSlide className="w-full" key={idx}><ReviewCard review={review}></ReviewCard></SwiperSlide>)
