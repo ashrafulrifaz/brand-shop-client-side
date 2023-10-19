@@ -32,15 +32,12 @@ const Header = () => {
       <div className="py-4 border-b-2 border-gray-200 dark:border-slate-800 dark:bg-[rgba(0,0,0,0.9)] dark:text-white">
          <div className="max-w-[85%] mx-auto flex justify-between items-center">
             <Link to="/"><h1 className="font-semibold text-2xl ">Brandy</h1></Link>
-            <ul className="flex gap-5">
+            <ul className="flex gap-5" id="header">
                <li>
                   <NavLink to="/" className="font-medium hover:text-sky-600 transition">Home</NavLink>
                </li>
                <li>
                   <NavLink to="/about" className="font-medium hover:text-sky-600 transition">About</NavLink>
-               </li>
-               <li>
-                  <NavLink to="/" className="font-medium hover:text-sky-600 transition">Home</NavLink>
                </li>
                <li>
                   <NavLink to="/add-product" className="font-medium hover:text-sky-600 transition">Add Product</NavLink>
