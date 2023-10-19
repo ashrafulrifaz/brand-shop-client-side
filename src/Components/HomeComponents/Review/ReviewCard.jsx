@@ -13,9 +13,9 @@ const ReviewCard = ({review}) => {
    const {name, image, review_text, profession, rating} = review
 
    return (
-      <div className="p-5 rounded-xl dark:bg-[#191919] border border-yellow-500 text-left relative hover:-translate-y-3 transition-all">
+      <div className="py-8 px-5 md:p-5 rounded-xl dark:bg-[#191919] border border-yellow-500 text-left relative hover:-translate-y-3 transition-all">
          <div className="flex gap-3 items-center">
-            <div className="w-2/12">
+            <div className="w-3/12 md:w-2/12">
                <img style={{width: '50px', height: '50px'}} src={image} className="rounded-full" alt="user" />
             </div>
             <div>

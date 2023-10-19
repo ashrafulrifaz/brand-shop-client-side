@@ -29,20 +29,20 @@ const AddProduct = () => {
    }
 
    return (
-      <div className="max-w-[85%] mx-auto py-12 flex items-center gap-5">
-         <div className='w-2/5'>
+      <div className="max-w-[90%] lg:max-w-[85%] mx-auto py-6 md:py-12 flex flex-col lg:flex-row items-center gap-5">
+         <div className='w-full: lg:w-2/5'>
             <div>
-               <img src={AddImage} alt="" />
+               <img src={AddImage} className='w-full md:w-1/2 lg:w-full mx-auto' alt="" />
             </div>
          </div>
-         <div className="w-3/5">
+         <div className="w-full lg:w-3/5">
             <form onSubmit={handleNewProduct}>
-               <div className="w-full border border-sky-500 px-5 py-4 rounded-lg space-y-5">
-                  <h2 className='text-2xl font-semibold'>Add New Car</h2>
+               <div className="w-full border border-sky-500 px-2.5 md:px-5 py-4 rounded-lg space-y-5">
+                  <h2 className='text-xl md:text-2xl font-semibold'>Add New Car</h2>
                   <div>
                      <input type="text" name="name" placeholder="Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
                   </div>
-                  <div className="flex gap-5">
+                  <div className="flex flex-col md:flex-row gap-5">
                      <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500">
                         <select name="brand" className="w-full focus:outline-none">
                            <option value="Type" disabled selected>Brand Name</option>
@@ -70,7 +70,7 @@ const AddProduct = () => {
                   <div>
                      <input type="text" name="image" placeholder="Image" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
                   </div>
-                  <div className="flex gap-5">
+                  <div className="flex flex-col md:flex-row gap-5">
                      <input type="number" name="price" placeholder="Price" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
                      <input type="text" name="rating" placeholder="Rating" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required />
                   </div>

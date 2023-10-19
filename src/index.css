@@ -4,8 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html, body {
   font-family: 'Inter', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 /* 
 #category_card:hover #category_button {
@@ -23,4 +25,35 @@ body {
 
 #header li .active {
   color: #0EA5E9;
+}
+
+.custom-loader {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    margin: 0 auto;
+}
+.custom-loader::before,
+.custom-loader::after {    
+    content:"";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side,#766DF4 92%,#0000);
+    background: 
+      var(--c) 50%  0, 
+      var(--c) 50%  100%, 
+      var(--c) 100% 50%, 
+      var(--c) 0    50%;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    animation: s2 1s infinite;
+}
+.custom-loader::before {
+  margin:4px;
+  filter:hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear
+}
+
+@keyframes s2{ 
+  100%{transform: rotate(.5turn)}
 }

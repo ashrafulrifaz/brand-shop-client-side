@@ -32,13 +32,13 @@ const ProductDetails = () => {
    }
 
    return (
-      <div className="py-12 max-w-[85%] mx-auto">
-         <div className="grid grid-cols-2 gap-12">
+      <div className="py-12 max-w-[90%] lg:max-w-[85%] mx-auto">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                <img src={image} alt="" />
             </div>
             <div className="space-y-4">
-               <h1 className="text-4xl font-semibold">{name}</h1>
+               <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold">{name}</h1>
                <div className="space-y-2">
                   <h3 className="text-xl font-medium">Brand: {brandName}</h3>
                   <h3 className="text-xl font-medium">Car Type: {type}</h3>

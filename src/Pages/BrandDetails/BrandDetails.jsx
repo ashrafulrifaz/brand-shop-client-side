@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { useParams } from 'react-router-dom';
 import BrandSlider from './BrandSlider';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import NotFound from '../../assets/not-found.gif'
 
@@ -10,25 +10,17 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles.css';
+import { AuthContext } from '../../Provider/Provider';
 
 const BrandDetails = () => {
+   const {loading, products, sliderItems} = useContext(AuthContext)
    const {id} = useParams()
    const [categoryItem, setCategoryItem] = useState([])
-   const [products, setProducts] = useState([])
-   const [sliderItems, setSliderItems] = useState([])
 
    useEffect(() => {
       fetch(`http://localhost:5000/category/${id}`)
          .then(res => res.json())
          .then(data => setCategoryItem(data))
-
-      fetch(`http://localhost:5000/products`)
-         .then(res => res.json())
-         .then(data => setProducts(data))
-
-      fetch('http://localhost:5000/slider')
-         .then(res => res.json())
-         .then(data => setSliderItems(data))
    }, [id]) 
    
    const currentProduct = products.filter(product => categoryItem.name === product.brandName)
@@ -37,6 +29,11 @@ const BrandDetails = () => {
 
    return (
       <div>
+         {
+            loading ? <div className="flex h-[85vh] items-center">
+            <div className="custom-loader"></div>
+         </div> : <span></span>
+         }
          {
             currentProduct.length > 0 ?
             <div>
@@ -57,14 +54,14 @@ const BrandDetails = () => {
                   >
                      {
                         currentSlider.map((item, idx) => 
-                        <SwiperSlide key={idx}>
+                        <SwiperSlide key={idx} className='-mt-[30px]'>
                            <BrandSlider item={item}></BrandSlider>
                         </SwiperSlide>)
                      }
                   </Swiper>
-                  <div className="max-w-[85%] mx-auto py-12">
+                  <div className="max-w-[85%] mx-auto py-5">
                      <h2 className='text-3xl font-semibold'>Choose Your Favourite One</h2>
-                     <div className="mt-8 grid grid-cols-3 gap-5">
+                     <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {
                            currentProduct.map((product, idx) => <ProductCard key={idx} product={product}></ProductCard>)
                         }               

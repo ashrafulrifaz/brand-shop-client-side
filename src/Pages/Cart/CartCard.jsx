@@ -26,11 +26,11 @@ const CartCard = ({filteredData, cartData, setCardData}) => {
    
    return (
       <div id="cart_item" className="p-4 flex gap-10 items-center border-t border-sky-500">
-         <div className="w-[10%]">
+         <div className="w-[45%] md:w-[10%]">
             <img src={image} className="w-28" alt="" />
          </div>
-         <div className="flex justify-between w-[85%]">
-            <div className="space-y-1">
+         <div className="flex justify-between w-[50%] md:w-[85%]">
+            <div className="hidden md:block space-y-1">
                <h2 className="text-xl font-semibold">{name}</h2>
                <p className="inline-block bg-sky-200 rounded-lg px-3 py-0.5 text-sky-600 font-semibold">{brandName}</p>
             </div>

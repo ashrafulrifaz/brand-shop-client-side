@@ -9,7 +9,7 @@ const ProductCard = ({product}) => {
    return (
       <div className="border border-sky-300 rounded-lg p-5 space-y-4">
          <img src={image} alt="" className="w-auto h-44" />
-         <h2 className="text-2xl font-semibold">{name}</h2>
+         <h2 className="text-xl lg:text-2xl font-semibold">{name}</h2>
          <div className="flex justify-between items-center">
             <p className="text-lg font-medium">{brandName}</p>
             <p className="text-lg font-medium flex items-center gap-1"><img src={Tags} className="w-6 h-auto" alt="" />{price} Lakh</p>

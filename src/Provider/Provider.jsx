@@ -8,9 +8,19 @@ const Provider = ({children}) => {
    const [user, setUser] = useState(null)
    const [userId, setUserId] = useState(null)
    const [loading, setLoading] = useState(true)
+   const [products, setProducts] = useState([])
+   const [sliderItems, setSliderItems] = useState([])
    const [lightDark, setLightDark] = useState('light')
 
    useEffect(() => {
+      fetch(`http://localhost:5000/products`)
+         .then(res => res.json())
+         .then(data => setProducts(data))
+
+      fetch('http://localhost:5000/slider')
+         .then(res => res.json())
+         .then(data => setSliderItems(data))
+
       const unsubscribe = onAuthStateChanged(auth, currentUser => {
          setUser(currentUser)         
          setLoading(false)
@@ -40,7 +50,7 @@ const Provider = ({children}) => {
       return signOut(auth)
    }
 
-   const info = {user, createUser, signInUser, signOutUser, googleLogin, loading, userId, lightDark, setLightDark}
+   const info = {user, createUser, signInUser, signOutUser, googleLogin, loading, userId, lightDark, setLightDark, products, sliderItems}
 
    return (
       <AuthContext.Provider value={info}>
