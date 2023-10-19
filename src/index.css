@@ -16,3 +16,7 @@ body {
   padding-top: 30px;
   padding-bottom: 10px;
 }
+
+#cart_item:first-child {
+  border: none;
+}

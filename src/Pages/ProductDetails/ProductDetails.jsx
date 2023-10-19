@@ -1,9 +1,27 @@
+import { useContext } from "react";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Provider/Provider";
 
 const ProductDetails = () => {
+   const {user} = useContext(AuthContext)
    const product = useLoaderData()
    const {name, image, details, brandName, price, type, rating} = product
+
+   const handleAddCart = () => {
+      const cartProduct = {name, image, brandName, price, type, id: user.uid}
+      fetch('http://localhost:5000/cart', {
+         method: "POST",
+         headers: {
+            'content-type': 'application/json'
+         },
+         body: JSON.stringify(cartProduct)
+      })
+      .then(res => res.json())
+      .then(data => {
+         console.log(data)
+      })
+   }
 
    return (
       <div className="py-12 max-w-[85%] mx-auto">
@@ -40,7 +58,7 @@ const ProductDetails = () => {
                   />
                   <span className="text-lg font-medium">{rating}</span>
                </div>
-               <button className="py-1.5 px-4 rounded-full bg-sky-500 text-white font-medium hover:scale-105 transition">Add To Cart</button>
+               <button onClick={handleAddCart} className="py-1.5 px-4 rounded-full bg-sky-500 text-white font-medium hover:scale-105 transition">Add To Cart</button>
             </div>
          </div>
          <hr className="my-8 h-2" />
