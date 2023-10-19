@@ -1,6 +1,11 @@
-import AddImage from '../../assets/new-item.jpg'
+import { useLoaderData } from 'react-router-dom';
+import UpdateImg from '../../assets/update.jpg'
 
-const AddProduct = () => {
+const UpdateProduct = () => {
+   const currentItem = useLoaderData()
+   const {_id, image, brandName, name, price, rating, type, details} = currentItem;
+   console.log(currentItem);
+
    const handleNewProduct = e => {
       e.preventDefault()
       const form = e.target;
@@ -14,8 +19,8 @@ const AddProduct = () => {
       const newProduct = {name, brandName, type, image, price, rating, details}
       console.log(newProduct);
       
-      fetch('http://localhost:5000/products', {
-         method: 'POST',
+      fetch(`http://localhost:5000/products/${_id}`, {
+         method: 'PUT',
          headers: {
             'content-type': 'application/json'
          },
@@ -32,19 +37,19 @@ const AddProduct = () => {
       <div className="max-w-[85%] mx-auto py-12 flex items-center gap-5">
          <div className='w-2/5'>
             <div>
-               <img src={AddImage} alt="" />
+               <img src={UpdateImg} alt="" />
             </div>
          </div>
          <div className="w-3/5">
             <form onSubmit={handleNewProduct}>
                <div className="w-full border border-rose-500 px-5 py-4 rounded-lg space-y-5">
-                  <h2 className='text-2xl font-semibold'>Add New Car</h2>
+                  <h2 className='text-2xl font-semibold'>Update Car Information</h2>
                   <div>
-                     <input type="text" name="name" placeholder="Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
+                     <input type="text" name="name" placeholder="Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required defaultValue={name} />
                   </div>
                   <div className="flex gap-5">
                      <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500">
-                        <select name="brand" className="w-full focus:outline-none">
+                        <select name="brand" defaultValue={brandName} className="w-full focus:outline-none">
                            <option value="Type" disabled selected>Brand Name</option>
                            <option value="Honda">Honda</option>
                            <option value="Toyota">Toyota</option>
@@ -57,7 +62,7 @@ const AddProduct = () => {
                         </select>
                      </div>
                      <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500">
-                        <select name="type" className="w-full focus:outline-none">
+                        <select name="type" defaultValue={type} className="w-full focus:outline-none">
                            <option value="Type" disabled selected>Type</option>
                            <option value="Sedan">Sedan</option>
                            <option value="SUV">SUV</option>
@@ -68,16 +73,16 @@ const AddProduct = () => {
                      </div>
                   </div>
                   <div>
-                     <input type="text" name="image" placeholder="Image" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
+                     <input type="text" name="image" placeholder="Image" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required defaultValue={image} />
                   </div>
                   <div className="flex gap-5">
-                     <input type="number" name="price" placeholder="Price" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
-                     <input type="text" name="rating" placeholder="Rating" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
+                     <input type="number" name="price" placeholder="Price" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required defaultValue={price} />
+                     <input type="text" name="rating" placeholder="Rating" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required defaultValue={rating} />
                   </div>
                   <div>
-                     <textarea rows="5" type="text" name="details" placeholder="Short Details" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required />
+                     <textarea rows="5" type="text" name="details" placeholder="Short Details" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-rose-300 focus:border-rose-500" required defaultValue={details} />
                   </div>
-                  <button className="text-white font-medium py-2 px-8 rounded-full hover:scale-105 transition bg-rose-500">Publish</button>
+                  <button className="text-white font-medium py-2 px-8 rounded-full hover:scale-105 transition bg-rose-500">Update</button>
                </div>
             </form>
          </div>
@@ -85,4 +90,4 @@ const AddProduct = () => {
    );
 };
 
-export default AddProduct;
+export default UpdateProduct;

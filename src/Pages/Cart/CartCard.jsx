@@ -1,5 +1,5 @@
 
-const CartCard = ({filteredData}, cartData, setCardData) => {
+const CartCard = ({filteredData, cartData, setCardData}) => {
    const {_id, image, name, brandName, price} = filteredData
 
    const handleDelete = (id) => {

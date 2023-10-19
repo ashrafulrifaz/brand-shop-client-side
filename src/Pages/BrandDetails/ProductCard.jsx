@@ -40,7 +40,7 @@ const ProductCard = ({product}) => {
             <Link to={`/products/${_id}`}>
                <button className="py-1.5 px-4 rounded-full bg-sky-500 text-white hover:text-sky-500 hover:bg-transparent border border-sky-500 font-medium hover:scale-105 transition">Details</button>
             </Link>
-            <Link>
+            <Link to={`/update/${_id}`}>
                <button className="py-1.5 px-4 rounded-full border border-sky-500 hover:bg-sky-500 text-sky-500 hover:text-white font-medium hover:scale-105 transition">Update Details</button>
             </Link>
          </div>
