@@ -45,17 +45,17 @@ const Router = createBrowserRouter([
          {
             path: '/products/:id',
             element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-            loader: ({params}) => fetch(`https://brand-shop-server-vert-pi.vercel.app/products/${params.id}`)
+            loader: ({params}) => fetch(`https://car-brand-shop-server.vercel.app/products/${params.id}`)
          },
          {
             path: '/my-cart',
             element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-            loader: () => fetch(`https://brand-shop-server-vert-pi.vercel.app/cart`)
+            loader: () => fetch(`https://car-brand-shop-server.vercel.app/cart`)
          },
          {
             path: '/update/:id',
             element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-            loader: ({params}) => fetch(`https://brand-shop-server-vert-pi.vercel.app/products/${params.id}`)
+            loader: ({params}) => fetch(`https://car-brand-shop-server.vercel.app/products/${params.id}`)
          }
       ]
    }

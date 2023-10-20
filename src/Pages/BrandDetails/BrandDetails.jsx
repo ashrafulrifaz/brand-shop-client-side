@@ -18,9 +18,11 @@ const BrandDetails = () => {
    const [categoryItem, setCategoryItem] = useState([])
 
    useEffect(() => {
-      fetch(`https://brand-shop-server-vert-pi.vercel.app/category/${id}`)
+      fetch(`https://car-brand-shop-server.vercel.app/category/${id}`)
          .then(res => res.json())
-         .then(data => setCategoryItem(data))
+         .then(data => {
+            setCategoryItem(data)
+         })
    }, [id]) 
    
    const currentProduct = products.filter(product => categoryItem.name === product.brandName)

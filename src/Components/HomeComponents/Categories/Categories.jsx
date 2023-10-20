@@ -5,7 +5,7 @@ const Categories = () => {
    const [categoryItem, setCategoryItem] = useState([])
 
    useEffect(() => {
-      fetch('https://brand-shop-server-vert-pi.vercel.app/category')
+      fetch('https://car-brand-shop-server.vercel.app/category')
          .then(res => res.json())
          .then(data => setCategoryItem(data))
    }, [])

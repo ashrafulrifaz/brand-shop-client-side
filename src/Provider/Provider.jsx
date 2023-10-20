@@ -13,11 +13,11 @@ const Provider = ({children}) => {
    const [lightDark, setLightDark] = useState('light')
 
    useEffect(() => {
-      fetch(`https://brand-shop-server-vert-pi.vercel.app/products`)
+      fetch(`https://car-brand-shop-server.vercel.app/products`)
          .then(res => res.json())
          .then(data => setProducts(data))
 
-      fetch('https://brand-shop-server-vert-pi.vercel.app/slider')
+      fetch('https://car-brand-shop-server.vercel.app/slider')
          .then(res => res.json())
          .then(data => setSliderItems(data))
 

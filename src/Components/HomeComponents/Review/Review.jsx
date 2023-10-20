@@ -12,7 +12,7 @@ const Review = () => {
    const [reviewData, setReviewData] = useState([])
 
    useEffect(() => {
-      fetch('https://brand-shop-server-vert-pi.vercel.app/review')
+      fetch('https://car-brand-shop-server.vercel.app/review')
          .then(res => res.json())
          .then(data => setReviewData(data))
    }, [])
