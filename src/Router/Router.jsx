@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import Cart from "../Pages/Cart/Cart";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import AboutPage from "../Pages/About/About";
 
 const Router = createBrowserRouter([
    {
@@ -27,7 +28,7 @@ const Router = createBrowserRouter([
          },
          {
             path: '/about',
-            element: <></>
+            element: <AboutPage></AboutPage>
          },
          {
             path: 'category/:id',
@@ -44,17 +45,17 @@ const Router = createBrowserRouter([
          {
             path: '/products/:id',
             element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+            loader: ({params}) => fetch(`https://brand-shop-server-p6vhov71m-ashraful-islams-projects.vercel.app/products/${params.id}`)
          },
          {
             path: '/my-cart',
             element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-            loader: () => fetch(`http://localhost:5000/cart`)
+            loader: () => fetch(`https://brand-shop-server-p6vhov71m-ashraful-islams-projects.vercel.app/cart`)
          },
          {
             path: '/update/:id',
             element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+            loader: ({params}) => fetch(`https://brand-shop-server-p6vhov71m-ashraful-islams-projects.vercel.app/products/${params.id}`)
          }
       ]
    }

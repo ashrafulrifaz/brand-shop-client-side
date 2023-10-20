@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import AddImage from '../../assets/new-item.jpg'
 
 const AddProduct = () => {
@@ -14,7 +15,7 @@ const AddProduct = () => {
       const newProduct = {name, brandName, type, image, price, rating, details}
       console.log(newProduct);
       
-      fetch('http://localhost:5000/products', {
+      fetch('https://brand-shop-server-p6vhov71m-ashraful-islams-projects.vercel.app/products', {
          method: 'POST',
          headers: {
             'content-type': 'application/json'
@@ -24,6 +25,13 @@ const AddProduct = () => {
          .then(res => res.json())
          .then(data => {
             console.log(data)
+            Swal.fire({
+               position: 'top-end',
+               icon: 'success',
+               title: 'Post Added Successfully',
+               showConfirmButton: false,
+               timer: 1500
+               })
             form.reset()
          })
    }
@@ -49,7 +57,7 @@ const AddProduct = () => {
                            <option value="Honda">Honda</option>
                            <option value="Toyota">Toyota</option>
                            <option value="BMW">BMW</option>
-                           <option value="Mercedez Benz">Mercedez Benz</option>
+                           <option value="Mercedes Benz">Mercedes Benz</option>
                            <option value="Audi">Audi</option>
                            <option value="Tesla">Tesla</option>
                            <option value="Ford">Ford</option>

@@ -18,15 +18,14 @@ const BrandDetails = () => {
    const [categoryItem, setCategoryItem] = useState([])
 
    useEffect(() => {
-      fetch(`http://localhost:5000/category/${id}`)
+      fetch(`https://brand-shop-server-p6vhov71m-ashraful-islams-projects.vercel.app/category/${id}`)
          .then(res => res.json())
          .then(data => setCategoryItem(data))
    }, [id]) 
    
    const currentProduct = products.filter(product => categoryItem.name === product.brandName)
-   const currentSlider = sliderItems.filter(item => categoryItem.name === item.brand)
-   console.log(currentSlider);
-
+   const currentSlider = sliderItems.filter(item => categoryItem.name == item.brand)
+   
    return (
       <div>
          {
@@ -42,7 +41,7 @@ const BrandDetails = () => {
                      spaceBetween={30}
                      centeredSlides={true}
                      autoplay={{
-                        delay: 2500,
+                        delay: 4500,
                         disableOnInteraction: false,
                      }}
                      pagination={{

@@ -4,7 +4,7 @@ import UsersImage from '../../../assets/users.png'
 
 const Features = () => {
    return (
-      <div className="py-6 md:py-12 max-w-[90%] md:max-w-[85%] mx-auto text-center">
+      <div className="py-6 md:py-12 max-w-[90%] lg:max-w-[85%] mx-auto text-center">
          <p className='text-sm font-semibold tracking-widest text-sky-500 uppercase'>Services</p>
          <h1 className="font-semibold text-2xl md:text-4xl leading-snug">Our Diverse Services</h1>
          <p className="lg:text-lg mt-1 mb-4">From events to tech, we have got it all</p>

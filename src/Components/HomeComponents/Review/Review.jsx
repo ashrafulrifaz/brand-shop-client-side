@@ -12,12 +12,12 @@ const Review = () => {
    const [reviewData, setReviewData] = useState([])
 
    useEffect(() => {
-      fetch('http://localhost:5000/review')
+      fetch('https://brand-shop-server-p6vhov71m-ashraful-islams-projects.vercel.app/review')
          .then(res => res.json())
          .then(data => setReviewData(data))
    }, [])
    return (
-      <div className="py-12 mx-auto max-w-[90%] md:max-w-[85%]">
+      <div className="py-12 mx-auto max-w-[90%] lg:max-w-[85%]">
          <p className='text-sm font-semibold tracking-widest text-sky-500 uppercase text-center'>Review</p>
          <h2 className="text-center font-bold text-2xl md:text-4xl">Client Review</h2>
          <p className="text-center md:text-lg mt-3 font-medium">What people think about us</p>

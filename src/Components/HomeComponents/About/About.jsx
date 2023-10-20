@@ -2,7 +2,7 @@ import AboutImage from '../../../assets/about-car.png'
 
 const About = () => {
    return (
-      <div className="py-6 lg:py-14 mx-auto max-w-[90%] md:max-w-[85%] grid grid-cols-1 lg:grid-cols-2">
+      <div className="py-6 lg:py-14 mx-auto max-w-[90%] lg:max-w-[85%] grid grid-cols-1 lg:grid-cols-2">
          <div>
             <img src={AboutImage} alt="" />
          </div>

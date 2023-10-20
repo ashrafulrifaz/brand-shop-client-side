@@ -20,7 +20,7 @@ const UpdateProduct = () => {
       const newProduct = {name, brandName, type, image, price, rating, details}
       console.log(newProduct);
       
-      fetch(`http://localhost:5000/products/${_id}`, {
+      fetch(`https://brand-shop-server-p6vhov71m-ashraful-islams-projects.vercel.app/products/${_id}`, {
          method: 'PUT',
          headers: {
             'content-type': 'application/json'
@@ -42,27 +42,27 @@ const UpdateProduct = () => {
    }
 
    return (
-      <div className="max-w-[85%] mx-auto py-12 flex items-center gap-5">
-         <div className='w-2/5'>
+      <div className="max-w-[85%] mx-auto py-6 lg:py-12 flex flex-col lg:flex-row items-center gap-5">
+         <div className='w-full lg:w-2/5'>
             <div>
-               <img src={UpdateImg} alt="" />
+               <img src={UpdateImg} className='w-full md:w-1/2 lg:w-full mx-auto' alt="" />
             </div>
          </div>
-         <div className="w-3/5">
+         <div className="w-full lg:w-3/5">
             <form onSubmit={handleNewProduct}>
                <div className="w-full border border-sky-500 px-5 py-4 rounded-lg space-y-5">
                   <h2 className='text-2xl font-semibold'>Update Car Information</h2>
                   <div>
                      <input type="text" name="name" placeholder="Name" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required defaultValue={name} />
                   </div>
-                  <div className="flex gap-5">
+                  <div className="flex flex-col md:flex-row gap-5">
                      <div className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500">
                         <select name="brand" defaultValue={brandName} className="w-full focus:outline-none">
                            <option value="Type" disabled selected>Brand Name</option>
                            <option value="Honda">Honda</option>
                            <option value="Toyota">Toyota</option>
                            <option value="BMW">BMW</option>
-                           <option value="Mercedez Benz">Mercedez Benz</option>
+                           <option value="Mercedes Benz">Mercedes Benz</option>
                            <option value="Audi">Audi</option>
                            <option value="Tesla">Tesla</option>
                            <option value="Ford">Ford</option>
@@ -83,7 +83,7 @@ const UpdateProduct = () => {
                   <div>
                      <input type="text" name="image" placeholder="Image" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required defaultValue={image} />
                   </div>
-                  <div className="flex gap-5">
+                  <div className="flex flex-col md:flex-row gap-5">
                      <input type="number" name="price" placeholder="Price" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required defaultValue={price} />
                      <input type="text" name="rating" placeholder="Rating" className="py-2 px-4 rounded-lg w-full focus:outline-none border border-sky-300 focus:border-sky-500" required defaultValue={rating} />
                   </div>

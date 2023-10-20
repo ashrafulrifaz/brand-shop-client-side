@@ -98,49 +98,51 @@ const Register = () => {
    }
 
    return (
-      <div className="bg-gray-50 py-16">
-         <div className="w-1/2 mx-auto py-10 px-16 bg-white rounded-lg drop-shadow-2xl">
-            <h2 className="text-xl font-semibold text-center">Create your account</h2>
-            <form onSubmit={handleRegister} className="mt-10 space-y-4">
-               <div>
-                  <label htmlFor="name">Name</label>
-                  <input id="name" type="name" name="name" placeholder="Enter your name" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
+      <div className="bg-gray-50">
+         <div className="py-8 md:py-10 lg:py-16 max-w-[90%] mx-auto lg:max-w-[85%]">
+            <div className="w-full md:w-3/4 lg:w-1/2 mx-auto py-5 lg:py-10 px-5 lg:px-16 bg-white rounded-lg drop-shadow-2xl">
+               <h2 className="text-xl font-semibold text-center">Create your account</h2>
+               <form onSubmit={handleRegister} className="mt-10 space-y-4">
+                  <div>
+                     <label htmlFor="name">Name</label>
+                     <input id="name" type="name" name="name" placeholder="Enter your name" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
+                     {
+                        isNameHave && <p className="text-red-500 font-medium mt-3">{isNameHave}</p>
+                     }
+                  </div>
+                  <div>
+                     <label htmlFor="photo">Photo</label>
+                     <input id="photo" type="text" name="photo" placeholder="Enter your photo URL" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
+                     {
+                        isImageHave && <p className="text-red-500 font-medium mt-3">{isImageHave}</p>
+                     }                  
+                  </div>
+                  <div>
+                     <label htmlFor="email">Email</label>
+                     <input id="email" type="email" name="email" placeholder="Enter your email" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
+                     {
+                        isEmailHave && <p className="text-red-500 font-medium mt-3">{isEmailHave}</p>
+                     }
+                  </div>
+                  <div className='relative'>
+                     <label htmlFor="password">Password</label>
+                     <input id="password" type={showPass ? 'text' : 'password'} name="password" placeholder="Enter your password" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
+                     <span onClick={() => setShowPass(!showPass)} className="absolute text-xs font-semibold bottom-3 right-3 cursor-pointer">{showPass ? 'Hide' : 'Show'}</span>
+                  </div>
                   {
-                     isNameHave && <p className="text-red-500 font-medium mt-3">{isNameHave}</p>
+                     isPassHave && <p className="text-red-500 font-medium mt-3">{isPassHave}</p>
+                  }
+                  <button className="w-full bg-sky-500 py-2 rounded-full text-white font-semibold">Register</button>
+                  <p className='text-center'>Already have an Account <Link to="/login" className='font-medium text-blue-600 hover:underline'>Login</Link></p>
+               </form>
+               <div className="flex gap-5 mt-4">
+                  <a onClick={handleGoogleLogin} className="w-full border border-blue-500 py-2 text-blue-500 font-semibold flex gap-2 justify-center items-center cursor-pointer rounded-full">
+                     <img src={Google} className='w-5 h-5' alt="google" /> <span>Register with Google</span>
+                  </a>
+                  {
+                     erroMessage && <p className="text-red-500 font-medium mt-3">{erroMessage}</p>
                   }
                </div>
-               <div>
-                  <label htmlFor="photo">Photo</label>
-                  <input id="photo" type="text" name="photo" placeholder="Enter your photo URL" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
-                  {
-                     isImageHave && <p className="text-red-500 font-medium mt-3">{isImageHave}</p>
-                  }                  
-               </div>
-               <div>
-                  <label htmlFor="email">Email</label>
-                  <input id="email" type="email" name="email" placeholder="Enter your email" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
-                  {
-                     isEmailHave && <p className="text-red-500 font-medium mt-3">{isEmailHave}</p>
-                  }
-               </div>
-               <div className='relative'>
-                  <label htmlFor="password">Password</label>
-                  <input id="password" type={showPass ? 'text' : 'password'} name="password" placeholder="Enter your password" className="w-full mt-2 border border-gray-300 py-2 px-3 rounded-lg focus:border-gray-500 focus:outline-none" />
-                  <span onClick={() => setShowPass(!showPass)} className="absolute text-xs font-semibold bottom-3 right-3 cursor-pointer">{showPass ? 'Hide' : 'Show'}</span>
-               </div>
-               {
-                  isPassHave && <p className="text-red-500 font-medium mt-3">{isPassHave}</p>
-               }
-               <button className="w-full bg-sky-500 py-2 rounded-full text-white font-semibold">Register</button>
-               <p className='text-center'>Already have an Account <Link to="/login" className='font-medium text-blue-600 hover:underline'>Login</Link></p>
-            </form>
-            <div className="flex gap-5 mt-4">
-               <a onClick={handleGoogleLogin} className="w-full border border-blue-500 py-2 text-blue-500 font-semibold flex gap-2 justify-center items-center cursor-pointer rounded-full">
-                  <img src={Google} className='w-5 h-5' alt="google" /> <span>Register with Google</span>
-               </a>
-               {
-                  erroMessage && <p className="text-red-500 font-medium mt-3">{erroMessage}</p>
-               }
             </div>
          </div>
       </div>

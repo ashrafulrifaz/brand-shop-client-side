@@ -17,7 +17,7 @@ const NewsLetter = () => {
 
    return (
       <div style={newBack} className='px-2 md:px-0 py-12'>
-         <div className="p-3 md:p-10 w-full md:w-1/2 mx-auto text-center bg-[rgba(255,255,255,0.2)] rounded-lg">
+         <div className="p-3 md:p-10 w-full md:w-4/5 lg:w-1/2 mx-auto text-center bg-[rgba(255,255,255,0.2)] rounded-lg">
             <h2 className='text-white font-semibold text-2xl md:text-3xl'>Subscribe Our Newsletter</h2>
             <p className='md:text-lg text-white mt-2 mb-4'>Subscribe our newsletter to get all update</p>
             <div>

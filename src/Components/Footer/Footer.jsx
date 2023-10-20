@@ -1,4 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
+import Facebook from '../../assets/Facebook.png'
+import Instagram from '../../assets/Instagram.png'
+import Twitter from '../../assets/Twitter.png'
+import Youtube from '../../assets/Youtube.png'
+import Linkedin from '../../assets/Linkedin.png'
 
 const Footer = () => {
    return (
@@ -24,36 +29,23 @@ const Footer = () => {
                </li>
             </ul>
             <ul className="gap-3 mt-5 md:mt-0" id="header">
-               <h2 className="text-lg font-semibold">Product Categories</h2>
-               <div className="flex gap-10 mt-3">
-                  <div className="space-y-2">
-                     <li>
-                        <NavLink to="/" className="font-medium hover:text-sky-600 transition">Honda</NavLink>
-                     </li>
-                     <li>
-                        <NavLink to="/about" className="font-medium hover:text-sky-600 transition">Toyota</NavLink>
-                     </li>
-                     <li>
-                        <NavLink to="/" className="font-medium hover:text-sky-600 transition">BMW</NavLink>
-                     </li>
-                     <li>
-                        <NavLink to="/add-product" className="font-medium hover:text-sky-600 transition">Mercedez Benz</NavLink>
-                     </li>
-                  </div>
-                  <div className="space-y-2">                  
-                     <li>
-                        <NavLink to="/my-cart" className="font-medium hover:text-sky-600 transition">Audi</NavLink>
-                     </li>
-                     <li>
-                        <NavLink to="/my-cart" className="font-medium hover:text-sky-600 transition">Tesla</NavLink>
-                     </li>
-                     <li>
-                        <NavLink to="/my-cart" className="font-medium hover:text-sky-600 transition">Ford</NavLink>
-                     </li>
-                     <li>
-                        <NavLink to="/my-cart" className="font-medium hover:text-sky-600 transition">Mazda</NavLink>
-                     </li>
-                  </div>
+               <h2 className="text-lg font-semibold">Follow Us Socially</h2>
+               <div className="flex gap-5 mt-3">
+                  <a href="https://facebook.com">
+                     <img src={Facebook} className="w-8 h-8" alt="Social" />
+                  </a>
+                  <a href="https://x.com">
+                     <img src={Twitter} className="w-8 h-8" alt="Social" />
+                  </a>
+                  <a href="https://instagram.com">
+                     <img src={Instagram} className="w-8 h-8" alt="Social" />
+                  </a>
+                  <a href="https://youtube.com">
+                     <img src={Youtube} className="w-8 h-8" alt="Social" />
+                  </a>
+                  <a href="https://linkedin.com">
+                     <img src={Linkedin} className="w-8 h-8" alt="Social" />
+                  </a>
                </div>
             </ul>
 

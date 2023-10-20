@@ -10,7 +10,6 @@ const Header = () => {
    const {user, signOutUser, setLightDark, lightDark} = useContext(AuthContext)
    const [showProfile, setShowProfile] = useState(false)
    const [isMenuActive, setIsMenuActive] = useState(false)
-   console.log(lightDark);
 
    const handleSignOut = () => {
       signOutUser()
@@ -32,13 +31,13 @@ const Header = () => {
 
    return (
       <div className="py-4 border-b-2 border-gray-200 dark:border-slate-800 dark:bg-[rgba(0,0,0,0.9)] dark:text-white">
-         <div className="max-w-[85%] mx-auto flex justify-between items-center">
+         <div className="max-w-[90%] lg:max-w-[85%] mx-auto flex justify-between items-center">
             <Link to="/"><h1 className="font-semibold text-2xl ">Brandy</h1></Link>            
-            <div className="order-first lg:order-none lg:hidden">
+            <div className="order-first lg:order-none md:hidden">
                <img src={LeftMenuBar} className={`w-6 h-auto ${isMenuActive ? 'hidden' : 'block'}`} alt="" onClick={() => setIsMenuActive(true)} />
                <img src={CloseMenu} className={`w-5 h-auto ${isMenuActive ? 'block' : 'hidden'}`} alt="" onClick={() => setIsMenuActive(false)} />
                <div className={`border border-gray-200 py-5 px-10 bg-white top-10 rounded-xl absolute ${isMenuActive ? 'block' : 'hidden'} z-10`}>
-                  <ul className="flex flex-col gap-5 justify-center" id="header_nav">
+                  <ul className="flex flex-col gap-5 justify-center" id="header">
                      <li>
                         <NavLink to="/" className="font-medium hover:text-sky-600 transition">Home</NavLink>
                      </li>
