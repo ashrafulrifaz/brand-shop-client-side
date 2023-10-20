@@ -15,7 +15,7 @@ const Cart = () => {
          <h1 className="text-2xl font-semibold">My added Cars</h1>
          <div className="mt-5 border border-sky-300 py-5 rounded-lg">
             {
-               myCartData.length > 0 ?
+               myCartData?.length > 0 ?
                <div>
                   {
                      myCartData.map((filteredData, idx) => <CartCard key={idx} filteredData={filteredData} setCardData={setCardData} cartData={cartData}></CartCard>)
