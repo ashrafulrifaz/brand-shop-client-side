@@ -5,7 +5,7 @@ const CartCard = ({filteredData, cartData, setCardData}) => {
    const {_id, image, name, brandName, price} = filteredData
 
    const handleDelete = (id) => {
-      fetch(`https://brand-shop-server-p6vhov71m-ashraful-islams-projects.vercel.app/cart/${id}`, {
+      fetch(`https://brand-shop-server-vert-pi.vercel.app/cart/${id}`, {
          method: "DELETE"
       })
          .then(res => res.json())
