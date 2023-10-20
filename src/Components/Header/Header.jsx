@@ -10,6 +10,7 @@ const Header = () => {
    const {user, signOutUser, setLightDark, lightDark} = useContext(AuthContext)
    const [showProfile, setShowProfile] = useState(false)
    const [isMenuActive, setIsMenuActive] = useState(false)
+   console.log(user);
 
    const handleSignOut = () => {
       signOutUser()
@@ -79,9 +80,9 @@ const Header = () => {
                {
                   user ? 
                   <a onClick={() => setShowProfile(!showProfile)} className="cursor-pointer relative">
-                     <img src="https://i.ibb.co/717bgy7/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg" className="w-8 h-8 rounded-full" alt="Pic" />
+                     <img src={user?.photoURL} className="w-8 h-8 rounded-full" alt="Pic" />
                      <div className={`z-10 mt-1 p-5 drop-shadow-lg rounded-lg absolute right-0 border border-blue-300 bg-white w-36 space-y-2 dark:bg-[rgba(0,0,0,0.9)] ${showProfile ? 'block' : 'hidden'}`}>
-                        <p className="font-medium hover:text-blue-500 text-lg">Profile</p>
+                        <p className="font-medium hover:text-blue-500 text-lg">{user?.displayName}</p>
                         <hr />
                         <button onClick={handleSignOut} className="py-1.5 px-4 bg-blue-500 text-white font-semibold rounded-lg hover:scale-110 transition-all text-sm">Log Out</button>
                      </div>
