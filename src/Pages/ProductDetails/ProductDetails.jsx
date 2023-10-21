@@ -11,7 +11,7 @@ const ProductDetails = () => {
 
    const handleAddCart = () => {
       const cartProduct = {name, image, brandName, price, type, id: user.uid}
-      fetch('https://car-brand-shop-server.vercel.app/cart', {
+      fetch('https://my-car-brand-shop-server.vercel.app/cart', {
          method: "POST",
          headers: {
             'content-type': 'application/json'
