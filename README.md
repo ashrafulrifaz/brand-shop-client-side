@@ -1,20 +1,20 @@
-This is a website of car selling website where users or customers can explore various type and bands car. If user like any car he can add it to his cart. In this website users can see review of others users. Users are also able to add a new car item to the website after login or register.
+This is a website of car selling website where users or customers can explore various types and brands of cars. If the user likes any car he can add it to his cart. On this website, users can see reviews of other users. Users are also able to add a new car item to the website after logging in or registering.
 
 ## Some features of this website
 
    * You can choose and add to your cart any car item
 
-   * There has a review section swiperjs slider
+   * There is a review section swiper js slider
 
-   * You can Add a product, edit and update a product details and also you can delete a product
+   * You can Add a product, edit and update product details and also you can delete a product
 
-   * To add, update or to delete a product you have to login to the website
+   * To add, update or delete a product you have to log in to the website
 
-   * You can login or register via your google account or via email and password
+   * You can log in or register via your Google account or using email and password
 
-   * After login or registration you will see your image and name at navbar
+   * After login or registration you will see your image and name in the navbar
 
-   * You can make the home page to dark theme or light theme by click a button
+   * You can make the home page to dark theme or light theme by clicking a button
 
 
 ## Technology used in this project
@@ -33,9 +33,9 @@ This is a website of car selling website where users or customers can explore va
 
    * Firebase
 
-   * mongoDB
+   * MongoDB
 
    * swipper js for carousel slider
 
 
-  ### [Client Side Live Link:](https://brand-shop-292a0.web.app/)
+  ### [Live Link:](https://brand-shop-292a0.web.app/)
